@@ -123,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] # added !! necessarily
 # Heroku设置
 if os.getcwd() == '/app':
     import dj_database_url
@@ -136,15 +136,16 @@ if os.getcwd() == '/app':
     
     # 支持所有的主机头 (host header)
 #    ALLOWED_HOSTS = ['https','0.0.0.0','HTTP_X_FORWARDED_PROTO','127.0.0.1:8000']
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['giatti-log.herokuapp.com']
+    DEBUG = False
     
     # 静态资产配置
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 #    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     STATIC_ROOT = 'staticfiles'
-
-#    STATIC_URL = '/static/' # added!
+    STATIC_URL = '/static/' # added!
+    
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
